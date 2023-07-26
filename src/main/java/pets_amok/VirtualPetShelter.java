@@ -44,13 +44,13 @@ public class VirtualPetShelter {
         }
     }
 
-    // public void cleanAllCages() {
-    //     for (VirtualPet pet : pets.values()) {
-    //         if (pet instanceof OrganicDog) {
-    //             ((OrganicDog) pet).cleanCage();
-    //         }
-    //     }
-    // }
+    public void cleanAllCages() {
+        for (VirtualPet pet : pets.values()) {
+            if (pet instanceof OrganicDog) {
+                ((OrganicDog) pet).cleanCage();
+            }
+        }
+    }
 
     // Tick method to update all pets
     public void tick() {

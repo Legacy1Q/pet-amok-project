@@ -6,5 +6,8 @@ public class OrganicDog extends Organic {
         super(name, description, hunger, thirst, waste, boredom, sickness);
         //TODO Auto-generated constructor stub
     }
+
+    public void cleanCage() {
+    }
     
 }
