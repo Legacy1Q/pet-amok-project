@@ -44,10 +44,10 @@ public class VirtualPetShelter {
         }
     }
 
-    public void cleanAllCages() {
+    public void oilAllPets() {
         for (VirtualPet pet : pets.values()) {
-            if (pet instanceof OrganicDog) {
-                ((OrganicDog) pet).cleanCage();
+            if (pet instanceof Robotic) {
+                ((Robotic) pet).oil();
             }
         }
     }

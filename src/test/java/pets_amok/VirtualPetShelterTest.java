@@ -1,9 +1,10 @@
 package pets_amok;
 
+import org.junit.jupiter.api.Test;
+
 public class VirtualPetShelterTest {
-    @Test 
-    void testCleanCages() {
-        VirtualPetShelter shelter = new VirtualPetShelter();
-        
+    @Test
+    public void shouldInstantiate() {
+        VirtualPetShelter underTest = new VirtualPetShelter();
     }
 }

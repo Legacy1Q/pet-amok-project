@@ -8,8 +8,9 @@ public class VirtualPet {
     private int waste;
     private int boredom;
     private int sickness;
+    private int health;
 
-    public VirtualPet(String name, String description, int hunger, int thirst, int waste, int boredom, int sickness) {
+    public VirtualPet(String name, String description, int hunger, int thirst, int waste, int boredom, int sickness, int health) {
         this.name = name;
         this.description = description;
         this.hunger = hunger;
@@ -17,6 +18,7 @@ public class VirtualPet {
         this.waste = waste;
         this.boredom = boredom;
         this.sickness = sickness;
+        this.health = health;
     }
 
     public void tick() {
@@ -25,6 +27,7 @@ public class VirtualPet {
         waste += 1;
         boredom += 1;
         sickness += 1;
+        health -= 1;
     }
 
     public void feed() {
@@ -33,6 +36,7 @@ public class VirtualPet {
         waste += 2;
         boredom += 1;
         sickness += 1;
+        health += 1;
     }
 
     public void water() {
@@ -41,6 +45,7 @@ public class VirtualPet {
         waste += 2;
         boredom += 1;
         sickness += 1;
+        health += 1;
     }
 
     public void clean() {
@@ -48,6 +53,7 @@ public class VirtualPet {
         thirst += 1;
         waste -= 5;
         boredom += 1;
+        health += 1;
     }
 
     public void play() {
@@ -62,6 +68,7 @@ public class VirtualPet {
         thirst += 1;
         waste += 1;
         sickness -= 5;
+        health += 2;
     }
 
     public void nothing() {
@@ -71,6 +78,15 @@ public class VirtualPet {
         boredom += 2;
         sickness += 1;
     }
+
+    public void walk() {
+        hunger += 1;
+        thirst += 1;
+        waste += 1;
+        boredom -= 5;
+        sickness += 1;
+    }
+
 
     public String getName() {
         return this.name;
@@ -126,6 +142,14 @@ public class VirtualPet {
 
     public void setSickness(int sickness) {
         this.sickness = sickness;
+    }
+
+    public int getHealth() {
+        return this.health;
+    }
+
+    public void setHealth(int health) {
+        this.health = health;
     }
 
 }
