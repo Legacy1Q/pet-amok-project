@@ -9,7 +9,18 @@ public class Robotic extends VirtualPet{
     }
 
     public void oil() {
-        oilLevel -= 5;
+        oilLevel += 2;
     }
+
+    public int getOilLevel() {
+        return oilLevel;
+    }
+
+    @Override
+    public void tick() {
+        super.tick();
+        oilLevel -= 1;
+    }
+
     
 }
