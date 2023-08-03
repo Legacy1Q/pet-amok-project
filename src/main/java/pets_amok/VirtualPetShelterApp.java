@@ -18,7 +18,7 @@ public class VirtualPetShelterApp {
         shelter.addPet(pet3);
         shelter.addPet(pet4);
 
-        System.out.println("Thank you for volunteering at Big Al's Virtual Pet Shelter and Delicatessen!");
+        System.out.println("Welcome to Big Al's Virtual Pet Shelter and Delicatessen!");
 
         while (true) {
             // Display status of all pets
@@ -26,7 +26,9 @@ public class VirtualPetShelterApp {
             System.out.println("Name\t|Description\t|Hunger\t|Thirst\t|Waste\t|Boredom\t|Sickness\t|Health");
             System.out.println("-------------------------------------");
             for (VirtualPet pet : shelter.getAllPets()) {
-                System.out.printf("%s\t|%d\t|%d\t|%d%n", pet.getName(), pet.getDescription(), pet.getHunger(), pet.getThirst(), pet.getWaste(), pet.getBoredom() ,pet.getSickness(), pet.getHealth());
+                System.out.printf("%s\t|%s\t|%d\t|%d\t|%d\t|%d\t|%d\t|%d\n",
+                        pet.getName(), pet.getDescription(), pet.getHunger(), pet.getThirst(), pet.getWaste(),
+                        pet.getBoredom(), pet.getSickness(), pet.getHealth());
             }
 
             // Display user options
@@ -97,7 +99,7 @@ public class VirtualPetShelterApp {
                     System.out.println("\nYou walk all the dogs.");
                     break;
                 case 0:
-                    System.out.println("\nThank you for volunteering at Big Al's Virtual Pet Shelter and Delicatessen!");
+                    System.out.println("\nThank you for volunteering at Big Al's Virtual Pet Shelter and Delicatessen! Hope to see you again soon!");
                     System.exit(0);
                     break;
                 default:
