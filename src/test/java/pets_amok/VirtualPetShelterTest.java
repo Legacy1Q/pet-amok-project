@@ -21,4 +21,19 @@ public class VirtualPetShelterTest {
         assertEquals(10, roboticDog.getWaste());
     }
 
+    @Test
+    void testOilAllPets() {
+        VirtualPetShelter shelter = new VirtualPetShelter();
+        RoboticDog roboticDog = new RoboticDog("RoboDog", "Robotic Dog", 10, 10, 10, 10, 10, 10, 10);
+        OrganicDog organicDog = new OrganicDog("OrgDog", "Organic Dog", 10, 10, 10, 10, 10, 10, 10);
+
+        shelter.addPet(roboticDog);
+        shelter.addPet(organicDog);
+
+        shelter.oilAllPets();
+
+        assertEquals(12, roboticDog.getOilLevel()); // Assuming you start with oilLevel 10 and increment by 2
+        assertEquals(10, organicDog.getHunger()); // Ensure organic pet's attributes remain unchanged
+    }
+
 }
