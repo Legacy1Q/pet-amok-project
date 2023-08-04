@@ -9,8 +9,8 @@ public class VirtualPetShelterTest {
     void testCleanAllCages() {
         VirtualPetShelter shelter = new VirtualPetShelter();
 
-        OrganicDog dirtyDog = new OrganicDog("Dirty Dog", "A dog that needs a bath", 10, 10, 10, 10, 10, 10, 10);
-        RoboticDog roboticDog = new RoboticDog("Robo Dog", "A dog that needs oil", 10, 10, 10, 10, 10, 10, 10);
+        OrganicDog dirtyDog = new OrganicDog("Dirty Dog", 10, 10, 10, 10, 10, 10);
+        RoboticDog roboticDog = new RoboticDog("Robo Dog", 10, 10, 10, 10, 10, 10);
 
         shelter.addPet(dirtyDog);
         shelter.addPet(roboticDog);
@@ -24,8 +24,8 @@ public class VirtualPetShelterTest {
     @Test
     void testOilAllPets() {
         VirtualPetShelter shelter = new VirtualPetShelter();
-        RoboticDog roboticDog = new RoboticDog("RoboDog", "Robotic Dog", 10, 10, 10, 10, 10, 10, 10);
-        OrganicDog organicDog = new OrganicDog("OrgDog", "Organic Dog", 10, 10, 10, 10, 10, 10, 10);
+        RoboticDog roboticDog = new RoboticDog("RoboDog", 10, 10, 10, 10, 10, 10);
+        OrganicDog organicDog = new OrganicDog("OrgDog", 10, 10, 10, 10, 10, 10);
 
         shelter.addPet(roboticDog);
         shelter.addPet(organicDog);
@@ -36,4 +36,20 @@ public class VirtualPetShelterTest {
         assertEquals(10, organicDog.getHunger()); // Ensure organic pet's attributes remain unchanged
     }
 
+    @Test
+    void testCleanLitterBox() {
+        VirtualPetShelter shelter = new VirtualPetShelter();
+        OrganicCat organicCat = new OrganicCat("OrgCat", 10, 10, 10, 10, 10, 10);
+        RoboticCat roboticCat = new RoboticCat("RoboCat", 10, 10, 10, 10, 10, 10);
+
+        shelter.addPet(organicCat);
+        shelter.addPet(roboticCat);
+
+        shelter.cleanLitterBox();
+
+        assertEquals(0, organicCat.getWaste());
+        assertEquals(10, roboticCat.getWaste());
+    }
+
+    
 }

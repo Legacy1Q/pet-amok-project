@@ -2,22 +2,18 @@ package pets_amok;
 
 public class VirtualPet {
     private String name;
-    private String description;
-    private int hunger;
-    private int thirst;
-    private int waste;
-    private int boredom;
-    private int sickness;
-    private int health;
+    protected int hunger;
+    protected int thirst;
+    protected int waste;
+    protected int boredom;
+    protected int health;
 
-    public VirtualPet(String name, String description, int hunger, int thirst, int waste, int boredom, int sickness, int health) {
+    public VirtualPet(String name,  int hunger, int thirst, int waste, int boredom, int health) {
         this.name = name;
-        this.description = description;
         this.hunger = hunger;
         this.thirst = thirst;
         this.waste = waste;
         this.boredom = boredom;
-        this.sickness = sickness;
         this.health = health;
     }
 
@@ -26,7 +22,6 @@ public class VirtualPet {
         thirst += 1;
         waste += 1;
         boredom += 1;
-        sickness += 1;
         health -= 1;
     }
 
@@ -35,7 +30,6 @@ public class VirtualPet {
         thirst += 1;
         waste += 2;
         boredom += 1;
-        sickness += 1;
         health += 1;
     }
 
@@ -44,7 +38,6 @@ public class VirtualPet {
         thirst -= 5;
         waste += 2;
         boredom += 1;
-        sickness += 1;
         health += 1;
     }
 
@@ -60,15 +53,14 @@ public class VirtualPet {
         hunger += 1;
         thirst += 1;
         boredom -= 5;
-        sickness += 1;
+        health += 1;
     }
 
     public void vet() {
         hunger += 1;
         thirst += 1;
         waste += 1;
-        sickness -= 5;
-        health += 2;
+        health += 5;
     }
 
     public void nothing() {
@@ -76,15 +68,7 @@ public class VirtualPet {
         thirst += 1;
         waste += 1;
         boredom += 2;
-        sickness += 1;
-    }
-
-    public void walk() {
-        hunger += 1;
-        thirst += 1;
-        waste += 1;
-        boredom -= 5;
-        sickness += 1;
+        health -= 1;
     }
 
 
@@ -94,14 +78,6 @@ public class VirtualPet {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-   public String getDescription() {
-        return this.description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public int getHunger() {
@@ -134,14 +110,6 @@ public class VirtualPet {
 
     public void setBoredom(int boredom) {
         this.boredom = boredom;
-    }
-
-    public int getSickness() {
-        return this.sickness;
-    }
-
-    public void setSickness(int sickness) {
-        this.sickness = sickness;
     }
 
     public int getHealth() {

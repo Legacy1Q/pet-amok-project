@@ -8,10 +8,11 @@ public class VirtualPetShelterApp {
         VirtualPetShelter shelter = new VirtualPetShelter();
 
         // Add pets to the shelter (you can customize this)
-        VirtualPet pet1 = new VirtualPet("Hank", "loyal but dumb dog.", 50, 50, 50, 50, 50, 100);
-        VirtualPet pet2 = new VirtualPet("Drover", "a dog afraid of his own shadow.", 50, 50, 50, 50, 50, 100);
-        VirtualPet pet3 = new VirtualPet("Pete", "overly lazy cat.", 50, 50, 50, 50, 50, 100);
-        VirtualPet pet4 = new VirtualPet("JT", "ruthless and annoying rooster.", 50, 50, 50, 50, 50, 100);
+        VirtualPet pet1 = new OrganicDog("Hank",  50, 50, 50, 50, 100, 100);
+        VirtualPet pet2 = new RoboticDog("Drover",  50, 50, 50, 50, 100, 100);
+        VirtualPet pet3 = new OrganicCat("Pete",  50, 50, 50, 50, 100, 100);
+        VirtualPet pet4 = new RoboticCat("JT",  50, 50, 50, 50, 100, 100);
+
 
         shelter.addPet(pet1);
         shelter.addPet(pet2);
@@ -23,12 +24,12 @@ public class VirtualPetShelterApp {
         while (true) {
             // Display status of all pets
             System.out.println("\nThis is the status of your pets:\n");
-            System.out.println("Name\t|Description\t|Hunger\t|Thirst\t|Waste\t|Boredom\t|Sickness\t|Health");
+            System.out.println("Name\t|Hunger\t|Thirst\t|Waste\t|Boredom\t|Health");
             System.out.println("-------------------------------------");
             for (VirtualPet pet : shelter.getAllPets()) {
-                System.out.printf("%s\t|%s\t|%d\t|%d\t|%d\t|%d\t|%d\t|%d\n",
-                        pet.getName(), pet.getDescription(), pet.getHunger(), pet.getThirst(), pet.getWaste(),
-                        pet.getBoredom(), pet.getSickness(), pet.getHealth());
+                System.out.printf("%s\t|%d\t|%d\t|%d\t|%d\t|%d\n)",
+                        pet.getName(), pet.getHunger(), pet.getThirst(), pet.getWaste(),
+                        pet.getBoredom(), pet.getHealth());
             }
 
             // Display user options
@@ -59,7 +60,7 @@ public class VirtualPetShelterApp {
                 case 3:
                     System.out.println("\nWhich pet would you like to play with?");
                     for (VirtualPet pet : shelter.getAllPets()) {
-                        System.out.println(pet.getName() + " - " + pet.getDescription());
+                        System.out.println(pet.getName());
                     }
                     System.out.print("Name: ");
                     String name = input.nextLine();
@@ -69,7 +70,7 @@ public class VirtualPetShelterApp {
                 case 4:
                     System.out.println("\nWhich pet would you like to adopt?");
                     for (VirtualPet pet : shelter.getAllPets()) {
-                        System.out.println(pet.getName() + " - " + pet.getDescription());
+                        System.out.println(pet.getName());
                     }
                     System.out.print("Name: ");
                     name = input.nextLine();
@@ -81,7 +82,7 @@ public class VirtualPetShelterApp {
                     name = input.nextLine();
                     System.out.println("What is the description of the pet you would like to admit?");
                     String description = input.nextLine();
-                    VirtualPet pet = new VirtualPet(name, description, 50, 50, 50, 50, 50, 100);
+                    VirtualPet pet = new VirtualPet(name, 50, 50, 50, 50, 100);
                     shelter.addPet(pet);
                     System.out.println("\nYou admit " + name + ".");
                     break;
