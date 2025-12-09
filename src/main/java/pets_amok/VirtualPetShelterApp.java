@@ -14,10 +14,10 @@ public class VirtualPetShelterApp {
             VirtualPet pet4 = new RoboticCat("JT",  50, 50, 50, 50, 100, 100);
 
 
-            shelter.addPet(pet1);
-            shelter.addPet(pet2);
-            shelter.addPet(pet3);
-            shelter.addPet(pet4);
+            shelter.adoptPet(pet1.getName(), pet1);
+            shelter.adoptPet(pet2.getName(), pet2);
+            shelter.adoptPet(pet3.getName(), pet3);
+            shelter.adoptPet(pet4.getName(), pet4);
 
             System.out.println("Welcome to Big Al's Virtual Pet Shelter and Delicatessen!");
 
@@ -74,14 +74,14 @@ public class VirtualPetShelterApp {
                         }
                         System.out.print("Name: ");
                         name = input.nextLine();
-                        shelter.removePet(name);
+                        shelter.admitPet(name);
                         System.out.println("\nYou adopt " + name + ".");
                         break;
                     case 5:
                         System.out.println("\nWhat is the name of the pet you would like to admit?");
                         name = input.nextLine();
                         VirtualPet pet = new VirtualPet(name, 50, 50, 50, 50, 100);
-                        shelter.addPet(pet);
+                        shelter.adoptPet(name,pet);
                         System.out.println("\nYou admit " + name + ".");
                         break;
                     case 6:

@@ -16,11 +16,11 @@ public class VirtualPetShelter {
         return pets.get(name);
     }
 
-    public void addPet(VirtualPet pet) {
+    public void adoptPet(String name,VirtualPet pet) {
         pets.put(pet.getName(), pet);
     }
 
-    public void removePet(String name) {
+    public void admitPet(String name) {
         pets.remove(name);
     }
 
