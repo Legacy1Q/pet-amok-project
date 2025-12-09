@@ -12,8 +12,8 @@ public class VirtualPetShelterTest {
         OrganicDog dirtyDog = new OrganicDog("Dirty Dog", 10, 10, 10, 10, 10, 10);
         RoboticDog roboticDog = new RoboticDog("Robo Dog", 10, 10, 10, 10, 10, 10);
 
-        shelter.addPet(dirtyDog);
-        shelter.addPet(roboticDog);
+        shelter.adoptPet(dirtyDog.getName(), dirtyDog);
+        shelter.adoptPet(roboticDog.getName(), roboticDog);
 
         shelter.cleanAllCages();
 
@@ -27,8 +27,8 @@ public class VirtualPetShelterTest {
         RoboticDog roboticDog = new RoboticDog("RoboDog", 10, 10, 10, 10, 10, 10);
         OrganicDog organicDog = new OrganicDog("OrgDog", 10, 10, 10, 10, 10, 10);
 
-        shelter.addPet(roboticDog);
-        shelter.addPet(organicDog);
+        shelter.adoptPet(roboticDog.getName(), roboticDog);
+        shelter.adoptPet(organicDog.getName(), organicDog);
 
         shelter.oilAllPets();
 
@@ -42,8 +42,8 @@ public class VirtualPetShelterTest {
         OrganicCat organicCat = new OrganicCat("OrgCat", 10, 10, 10, 10, 10, 10);
         RoboticCat roboticCat = new RoboticCat("RoboCat", 10, 10, 10, 10, 10, 10);
 
-        shelter.addPet(organicCat);
-        shelter.addPet(roboticCat);
+        shelter.adoptPet(organicCat.getName(), organicCat);
+        shelter.adoptPet(roboticCat.getName(), roboticCat);
 
         shelter.cleanLitterBox();
 
